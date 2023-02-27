@@ -1,35 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel</title>
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
+
 <body>
+  <script src="js/index.js"></script>
+  <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="jquery/jquery.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script>
+    $(function () {
+      $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+      }, function (start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      });
+    });
+  </script>
+  <!-- ===================================================== script over ======================================= -->
+
+  <header>
     <div class="nav">
-        <input type="checkbox" id="nav-check">
-        <div class="nav-header">
-          <div class="nav-title">
-            <img src="pics/logo.png" alt="logo" class="logo">
-          </div>
-        </div>
-        <div class="nav-btn">
-          <label for="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        
-        <div class="nav-links">
-          <a href="" target="_blank">Home</a>
-          <a href="" target="_blank">Inquiry</a>
-          <a href="" target="_blank">Services</a>
-          <a href="" target="_blank">Contect</a>
-          <a href="" target="_blank">Help</a>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          <img src="pics/logo.png" alt="logo" class="logo">
         </div>
       </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="" target="_blank">Home</a>
+        <a href="" target="_blank">Inquiry</a>
+        <a href="" target="_blank">Services</a>
+        <a href="" target="_blank">Contect</a>
+        <a href="" target="_blank">Help</a>
+      </div>
+  </header>
+
+  </div>
+  <div class="container">
+
+    <div class="first_content_lft col-sm-6 col-md-6 col-lg-6 px-4">
+      <div class="first_lft_header py-3">
+        <h1>SB Hostel — amazing hostel for the free spirited traveler</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis numquam veniam, repellendus maiores
+          illo
+          excepturi optio at, ut eos sapiente consequuntur doloribus adipisci debitis possimus?</p>        
+      </div>
+    </div>
+
+    <div class="first_content_rgt col-sm-6 col-md-6 col-lg-6">
+      <img src="pics/room.webp" alt="" class="img_1">
+    </div>
+
+  </div>
+
 </body>
+
 </html>

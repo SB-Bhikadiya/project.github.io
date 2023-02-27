@@ -70,9 +70,10 @@
       position: absolute;
       display: block;
       width: 100%;
+      max-height: 250px;
       background-color: #333;
       height: 0px;
-      transition: all 0.3s ease-in;
+      transition: all 0.3s ease;
       overflow-y: hidden;
       top: 50px;
       left: 0px;
@@ -80,6 +81,7 @@
     .nav > .nav-links > a {
       display: block;
       width: 100%;
+      text-align: center;
     }
     .nav > #nav-check:not(:checked) ~ .nav-links {
       height: 0px;

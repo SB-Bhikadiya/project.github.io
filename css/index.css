@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.extra{
+  height: 50px;
+  width: 50vw;
+}
+
 :root{
   --purple:#B1B2FF;
   --purple2:#AAC4FF;
@@ -123,8 +128,10 @@ body {
 
 /* ====================================== header over ============================================================== */
 .first_content_lft {
-  height: 80vh;
+  height: 66vh;
   float: left;
+  background: var(--purple3);
+  border-radius: 30px 0px 0px 30px;
 }
 
 .first_content_rgt {
@@ -160,20 +167,4 @@ body {
   }
 }
 
-/* @media screen and (max-width:410px) {
-  .first_content_lft{
-    height: 43vh;
-  }
-}
 
-@media screen and (max-width:375px) {
-  .first_content_lft{
-    height: 45vh;
-  }
-}
-
-@media screen and (max-width:344px) {
-  .first_content_lft{
-    height: 48vh;
-  }
-} */

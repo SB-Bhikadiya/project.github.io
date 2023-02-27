@@ -8,27 +8,16 @@
   <title>Hostel</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body>
   <script src="js/index.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
   <script src="jquery/jquery.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <script>
-    $(function () {
-      $('input[name="daterange"]').daterangepicker({
-        opens: 'left'
-      }, function (start, end, label) {
-        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-      });
-    });
-  </script>
+  
   <!-- ===================================================== script over ======================================= -->
 
-  <header>
+  <header class="pb-5">
     <div class="nav">
       <input type="checkbox" id="nav-check">
       <div class="nav-header">
@@ -56,7 +45,7 @@
   </div>
   <div class="container-fluid">
 
-    <div class="first_content_lft col-sm-6 col-md-6 col-lg-6 px-4">
+    <div class="first_content_lft col-sm-6 col-md-6 col-lg-6 px-4 pt-lg-5 my-lg-5 my-md-5">
       <div class="first_lft_header py-3">
         <h1>SB Hostel — amazing hostel for the free spirited traveler</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis numquam veniam, repellendus maiores

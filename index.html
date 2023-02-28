@@ -8,13 +8,15 @@
   <title>Hostel</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body>
   <script src="js/index.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
   <script src="jquery/jquery.js"></script>
-  
+
+
   <!-- ===================================================== script over ======================================= -->
 
   <header class="pb-5">
@@ -25,13 +27,6 @@
           <img src="pics/logo.png" alt="logo" class="logo">
         </div>
       </div>
-      <div class="nav-btn">
-        <label for="nav-check">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
 
       <div class="nav-links">
         <a href="" target="_blank">Home</a>
@@ -40,26 +35,110 @@
         <a href="" target="_blank">Contect</a>
         <a href="" target="_blank">Help</a>
       </div>
+
+      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"><i class="bi bi-list"></i></button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+        </div>
+      </div>
+    </div>
   </header>
 
-  </div>
-  <div class="container-fluid">
+  <!-- ===================================================header over=============================================== -->
 
-    <div class="first_content_lft col-sm-6 col-md-6 col-lg-6 px-4 pt-lg-5 mt-lg-5 mt-md-5 mt-sm-5">
+  <div class="container-fluid starter mb-sm-5">
+    <div class="first_content_lft col-sm-6 px-4 pt-lg-5 mt-sm-5">
       <div class="first_lft_header py-3">
         <h1>SB Hostel — amazing hostel for the free spirited traveler</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis numquam veniam, repellendus maiores
           illo
-          excepturi optio at, ut eos sapiente consequuntur doloribus adipisci debitis possimus?</p>        
+          excepturi optio at, ut eos sapiente consequuntur doloribus adipisci debitis possimus?</p>
       </div>
     </div>
-
-    <div class="first_content_rgt col-sm-6 col-md-6 col-lg-6">
-      <img src="pics/room.webp" alt="" class="img_1">
+    <div class="first_content_rgt col-sm-6">
+      <div style="width: 100%; max-height: 80vh;">
+        <img src="pics/room.webp" alt="" class="img_1">
+      </div>
     </div>
-
   </div>
 
+  <!-- =================================================================== -->
+
+
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 cardss mt-sm-5 px-sm-4">
+    <div class="col">
+      <div class="card">
+        <img src="pics/second_1.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bed in 6-Bed Room with Shared Bathroom</h5>
+          <div class="main_amenities"><span class="main_amenities-item d-inline-flex align-items-center m-1"><box-icon
+                name='user-rectangle' type='solid'></box-icon> 2 Sleeps </span><span
+              class="main_amenities-item d-inline-flex align-items-center"><box-icon name='bed'></box-icon> 1 bunk
+              bed</span></div>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="pics/second_2.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Double Room with Private Bathroom</h5>
+          <div class="main_amenities"><span class="main_amenities-item d-inline-flex align-items-center m-1"><box-icon
+                name='user-rectangle' type='solid'></box-icon> 2 Sleeps </span><span
+              class="main_amenities-item d-inline-flex align-items-center"><box-icon name='bed'></box-icon> 1 twinn
+              bed</span></div>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="col-12 footer">
+      <div class="col-sm-3 infoo px-sm-5">
+        <img src="pics/logo.png" alt="" class="px-sm-5">
+        <p class="mx-sm-4">Ut tellus elementum sagittis vitae et leo duis ut. Sit amet consectetur adipiscing elit duis.</p>
+      </div>
+      <div class="col-sm-3 infoo px-sm-5">
+        <h2 class="my-sm-5">Quick links</h2>
+        <ul>
+          <li style="list-style: none; line-height: 5vh;"><a href="" style="text-decoration: none;">Home</a></li>
+          <li style="list-style: none; line-height: 5vh;"><a href="" style="text-decoration: none;">Inquiry</a></li>
+          <li style="list-style: none; line-height: 5vh;"><a href="" style="text-decoration: none;">Services</a></li>
+          <li style="list-style: none; line-height: 5vh;"><a href="" style="text-decoration: none;">Contect</a></li>
+          <li style="list-style: none; line-height: 5vh;"><a href="" style="text-decoration: none;">Help</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 infoo px-sm-5">
+        <h2 class="my-sm-5">Contect</h2>
+        <Address>
+          <h5>Kiranpark soc punagam,surat.395010</h5>
+          <h5>+91 8866601854</h5>
+        </Address>        
+      </div>
+      <div class="col-sm-3 infoo px-sm-5">
+        <h2 class="my-sm-5">Follow Us</h2>
+        <li style="list-style: none; line-height: 6vh;">FaceBook</li>
+        <li style="list-style: none; line-height: 6vh;">Instagram</li>
+        <li style="list-style: none; line-height: 6vh;">Twitter</li>
+        <li style="list-style: none; line-height: 6vh;">Whatsapp</li>
+      </div>
+      <div class="copyy">
+        <pre>@ copyright 2016-2023 all rights are reserved</pre>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

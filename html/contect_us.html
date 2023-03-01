@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contect</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: #007bff;
+            background: linear-gradient(to right, #0062E6, #33AEFF);
+        }
+
+        .bg-image {
+            background-image: url('../pics/registration_img.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .form-control:focus {
+            box-shadow: none !important;
+            border: 1px solid black !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid px-5 my-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="card border-0 rounded-3 shadow-lg overflow-hidden">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-sm-6 d-none d-sm-block bg-image"></div>
+                            <div class="col-sm-6 p-4">
+                                <div class="text-center">
+                                    <div class="h3 fw-light">Contact Us</div>
+                                </div>
+                                <form id="contactForm">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" type="text" placeholder="Name" />
+                                        <label for="name">Name</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="emailAddress" type="email"
+                                            placeholder="Email Address" />
+                                        <label for="emailAddress">Email Address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" id="message" type="text" placeholder="Message"
+                                            style="height: 10rem;"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>                                    
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg " id="submitButton"
+                                            type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

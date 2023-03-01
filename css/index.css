@@ -62,7 +62,7 @@ body {
 }
 
 .nav>.nav-links>a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .nav>#nav-check {
@@ -71,6 +71,10 @@ body {
 
 .btn {
   display: none !important;
+}
+
+.small_disp{
+  display: none;
 }
 
 @media screen and (max-width:576px) {
@@ -88,6 +92,13 @@ body {
   .nav-links {
     display: none !important;
   }
+  .first_content_rgt{
+    display: none;
+  }
+  .small_disp{
+    display: block;
+  }
+
 }
 
 .btn-close:hover {
@@ -109,26 +120,29 @@ body {
 
 .img_1 {
   height: 80vh;
-  width: 50vw;
+  width: 49vw;
 }
-.cardss{
+
+.cardss {
   clear: both;
 }
-.footer{
+
+.footer {
   position: relative;
   bottom: 0;
   background-color: var(--purple);
   color: whitesmoke;
   height: auto;
 }
-.copyy{
+
+.copyy {
   text-align: center;
   clear: both;
   color: white;
   background-color: black;
 }
 
-.infoo{
+.infoo {
   float: left;
   justify-content: center;
   align-items: center;
@@ -149,7 +163,6 @@ body {
 
   .img_1 {
     height: 50%;
-    width: 100%;
     object-fit: fill;
   }
 }
@@ -159,7 +172,8 @@ body {
     border-radius: 15px 15px 15px 15px;
     margin-bottom: 10px;
   }
-  .img_1{
+
+  .img_1 {
     border-radius: 15px;
   }
 }

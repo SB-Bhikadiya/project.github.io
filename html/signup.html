@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../resources/all.min.css">
   <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
   <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../jquery/jquery.js"></script>
+
   <style>
     body {
       background: #007bff;
@@ -42,10 +44,67 @@
       box-shadow: none !important;
       border: 1px solid black !important;
     }
+
+    .error {
+      color: red;
+      display: none;
+    }
   </style>
 </head>
 
 <body>
+  <script>
+    $(document).ready(function () {
+      $("#myform").submit(function (event) {
+        event.preventDefault();
+
+        var name = $("#InputUsername").val().trim();
+        if (name == '') {
+          $("#nameError").text('*please enter your name.').show();
+          return false;
+        }
+        else {
+          $("#nameError").hide();
+        }
+
+        var email = $("#InputEmail").val().trim();
+        if (email == '') {
+          $("#emailError").text('*please enter email right').show();
+          return false;
+        } else if (!isValidEmail(email)) {
+          $("#emailError").text('*please enter email right').show();
+        }
+        else {
+          $("#emailError").hide();
+        }
+
+        var password = $("#Password").val().trim();
+        if (password == '') {
+          $("#passwordError").text('*password length is minumum 8 words').show();
+          return false;
+        } else if (password.length < 8) {
+          $("#passwordError").text('*password length is minumum 8 words').show();
+        }
+        else {
+          $("#passwordError").hide();
+        } 
+
+        var cpassword = $("#PasswordConfirm").val().trim();
+        if (cpassword != password) {
+          $("#cpasswordError").text('password does not match.').show();
+          return false;
+        }
+        
+        this.submit();
+      });
+      function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    });
+  </script>
+
+
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
@@ -54,29 +113,33 @@
           </div>
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-5">Sign Up</h5>
-            <form>
+            <form id="myform" action="./signin.html">
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required
+                <input type="text" class="form-control" id="InputUsername" placeholder="myusername"
                   autofocus>
-                <label for="floatingInputUsername">Username</label>
+                <label for="InputUsername">Username</label>
+                <span id="nameError" class="error"></span>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                <label for="floatingInputEmail">Email address</label>
+                <input type="email" class="form-control" id="InputEmail" placeholder="name@example.com">
+                <label for="InputEmail">Email address</label>
+                <span id="emailError" class="error"></span>
               </div>
 
               <hr>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="Password" placeholder="Password">
+                <label for="Password">Password</label>
+                <span id="passwordError" class="error"></span>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
-                <label for="floatingPasswordConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="PasswordConfirm" placeholder="Confirm Password">
+                <label for="PasswordConfirm">Confirm Password</label>
+                <span id="cpasswordError" class="error"></span>
               </div>
 
               <div class="d-grid mb-2">

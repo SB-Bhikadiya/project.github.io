@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery.js"></script>
+</head>
+
+<body>
+  <form id="myForm" action="">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <style>
+    .error {
+      color: red;
+      display: none;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      $('#myForm').submit(function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Validate name field
+        var name = $('#name').val().trim();
+        if (name === '') {
+          $('#nameError').text('Please enter your name.').show();
+          return false; // Stop form submission
+        } else {
+          $('#nameError').hide();
+        }
+
+        // Validate email field
+        var email = $('#email').val().trim();
+        if (email === '') {
+          $('#emailError').text('Please enter your email.').show();
+          return false; // Stop form submission
+        } else if (!isValidEmail(email)) {
+          $('#emailError').text('Please enter a valid email.').show();
+          return false; // Stop form submission
+        } else {
+          $('#emailError').hide();
+        }
+
+        // Validate password field
+        var password = $('#password').val().trim();
+        if (password === '') {
+          $('#passwordError').text('Please enter your password.').show();
+          return false; // Stop form submission
+        } else if (password.length < 8) {
+          $('#passwordError').text('Please enter a password that is at least 8 characters long.').show();
+          return false; // Stop form submission
+        } else {
+          $('#passwordError').hide();
+        }
+
+        // If all fields are valid, submit the form
+        this.submit();
+      });
+
+      function isValidEmail(email) {
+        // Regular expression to validate email format
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

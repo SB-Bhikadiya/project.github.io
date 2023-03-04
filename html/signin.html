@@ -8,7 +8,8 @@
     <title>Login</title>
     <link rel="stylesheet" href="../resources/all.min.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../jquery/jquery.js"></script>
     <style>
         body {
             background: #007bff;
@@ -39,16 +40,50 @@
         .form-check-input {
             box-shadow: none !important;
         }
+
+        .error {
+            color: red;
+            display: none;
+        }
     </style>
 </head>
 
 
 <body>
     <script>
-        const button = document.getElementById("signin");
-        button.addEventListener("click", function () {
-            console.log("clicked");
-            window.location.href="../index.html";
+        $(document).ready(function () {
+            $("#myform").submit(function (event) {
+                event.preventDefault();
+
+                var email = $("#InputEmail").val().trim();
+                if (email == '') {
+                    $("#emailError").text('*please enter email right').show();
+                    return false;
+                } else if (!isValidEmail(email)) {
+                    $("#emailError").text('*please enter email right').show();
+                }
+                else {
+                    $("#emailError").hide();
+                    return true;
+                }
+
+                var password = $("#Password").val().trim();
+                if (password == '') {
+                    $("#passwordError").text('*password length is minumum 8 words').show();
+                    return false;
+                } else if (password.length < 8) {
+                    $("#passwordError").text('*password length is minumum 8 words').show();
+                }
+                else {
+                    $("#passwordError").hide();
+                    return true;
+                }
+                this.submit();
+            });
+            function isValidEmail(email) {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
         });
     </script>
     <div class="container">
@@ -57,16 +92,17 @@
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
-                        <form>
+                        <form action="../index.html" id="myform">
+
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="name@example.com">
+                                <label for="InputEmail">Email address</label>
+                                <span id="emailError" class="error"></span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
-                                    placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <input type="password" class="form-control" id="Password" placeholder="Password">
+                                <label for="Password">Password</label>
+                                <span id="passwordError" class="error"></span>
                             </div>
 
                             <div class="form-check mb-3">
@@ -82,12 +118,12 @@
                             </div>
                             <hr class="my-4">
                             <div class="d-grid mb-2">
-                                <button class="btn btn-lg btn-google btn-login text-uppercase fw-bold" type="submit">
+                                <button class="btn btn-lg btn-google btn-login text-uppercase fw-bold" type="button">
                                     Sign in with Google
                                 </button>
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-lg btn-facebook btn-login text-uppercase fw-bold" type="submit">
+                                <button class="btn btn-lg btn-facebook btn-login text-uppercase fw-bold" type="button">
                                     Sign in with Facebook
                                 </button>
                             </div>

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../jquery/jquery.js"></script>
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+
 
     <title>Document</title>
     <style>
@@ -41,6 +44,23 @@
         body {
             background-color: #EEF1FF;
         }
+
+        .imgg {
+            height: 500px;
+            width: 100%;
+        }
+
+        .form-control:focus {
+            box-shadow: none !important;
+            border: 1px solid black !important;
+        }
+
+        @media screen and (max-width:425px) {
+            .imgg {
+                height: auto;
+                width: 100%;
+            }
+        }
     </style>
     <script>
         let xmlhttp = new XMLHttpRequest();
@@ -71,18 +91,21 @@
             var staff = xmlhttpp.responseText;
             var staffdata = JSON.parse(staff);
 
-                
+
             staffdata.forEach(item => {
-                $(".stf").append(
+                $(".roww").append(
                     `
+                    <div class="col">
                         <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Sagar Bhikadiya</h5>
-                <p class="card-text">General Manager</p>
-                <p class="card-text">Sagar over 10 years of experience in the hospitality industry and has been with our hostel since it opened. He oversees all operations and ensures that our guests have a comfortable and enjoyable stay.</p>
-            </div>
-          </div> 
+                             <img src="${item.image}" class="card-img-top img-fluid imgg" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">${item.name}</h5>
+                                    <p class="card-text">${item.position}r</p>
+                                    <p class="card-text">${item.description}</p>
+                                 </div>
+                         </div> 
+                    </div>        
+                    
                         `
                 )
             });
@@ -93,46 +116,140 @@
 
 <body>
     <center>
-        <h1 style="font-size: 29px;"> Meet our team </h1>
+        <h1 class="pt-sm-4"> Meet our team </h1>
     </center>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col stf">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mx-sm-5 roww">
 
+
+    </div>
+    <div class="pt-sm-5 pb-sm-3 px-sm-5">
+
+        <h1> Our rates </h1>
+        <center>
+            <h3 class="h3">Welcome to the fee page on our hostel website! This is where you can
+                find all the
+                information you need about the costs associated with staying at our hostel. We've designed a clear and
+                easy-to-read table that outlines the fees for each type of room available at the hostel, so you can
+                easily
+                compare the costs and benefits of each option.</h3>
+            <table class="table px-5">
+                <thead>
+                    <tr>
+                        <th>Type of Room</th>
+                        <th>Peak Season Rates</th>
+                        <th>Off-Peak Season Rates</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+
+
+
+    
+
+
+
+
+
+
+    <div class="container mb-4" style="width: 100%;">
+        <div class="row justify-content-center">
+          <div>
+            <div class="card border-0 rounded-3">
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <div class="h1 fw-light">Suggestion</div>
+                  <p class="mb-4 text-muted">Your voice matters - suggest and make a difference!</p>
+                </div>     
+               
+      
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+      
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                    <label for="name">Name</label>
+                  </div>
+      
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                    <label for="emailAddress">Email Address</label>
+                  </div>
+      
+                  <div class="form-floating mb-3">
+                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                    <label for="message">Suggestion</label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+                  </div>
+                </form>     
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col stf">
+      </div>
 
+
+
+
+
+
+
+
+      <div class="card-group" style="background-color: #D2DAFF;">
+        <div class="card border-0" style="background-color: #D2DAFF;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Quick Links</h5>
+                <p class="card-text">
+                    <li class="text-center list-unstyled m-2"><a href="../index.html"
+                            class="text-decoration-none text-uppercase" style="color: black;">home</a></li>
+                    <li class="text-center list-unstyled m-2"><a href="" class="text-decoration-none text-uppercase"
+                            style="color: black;">Inquiry</a></li>
+                    <li class="text-center list-unstyled m-2"><a href="contect_us.html"
+                            class="text-decoration-none text-uppercase" style="color: black;">contect us</a></li>
+                    <li class="text-center list-unstyled m-2"><a href="signup.html"
+                            class="text-decoration-none text-uppercase" style="color: black;">signin/up</a></li>
+                </p>
+            </div>
         </div>
-        <div class="col stf">
-
+        <div class="card border-0" style="background-color: #D2DAFF;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Contect Us</h5>
+                <h6 class="text-center ">+91 6589532245</h6>
+                <h6 class="text-center ">sagarbhikadiya231@gmail.com</h6>
+            </div>
         </div>
-        <div class="col stf">
-
+        <div class="card border-0" style="background-color: #D2DAFF;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Follow Us</h5>
+                <p class="card-text">
+                    <li class="text-center list-unstyled m-2"><a
+                            href="https://www.facebook.com/sagarr.bhikadiya?mibextid=ZbWKwL"
+                            class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                                class="fa-brands fa-facebook-f"></i></a></li>
+                    <li class="text-center list-unstyled m-2"><a
+                            href="https://instagram.com/sb_bhikadiya_?igshid=ZDdkNTZiNTM="
+                            class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li class="text-center list-unstyled m-2"><a href="https://github.com/SB-Bhikadiya"
+                            class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                                class="fa-brands fa-github"></i></a></li>
+                    <li class="text-center list-unstyled m-2"><a href="https://wa.me/+918866601854"
+                            class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                                class="fa-brands fa-whatsapp"></i></a></li>
+                </p>
+            </div>
         </div>
     </div>
-    <!-- ============================================================================================================================ -->
-    <h1 style="font-size: 29px;"> Our rates </h1>
-    <center>
-        <h3 style="width:80%; font-size: 18px;">Welcome to the fee page on our hostel website! This is where you can
-            find all the
-            information you need about the costs associated with staying at our hostel. We've designed a clear and
-            easy-to-read table that outlines the fees for each type of room available at the hostel, so you can easily
-            compare the costs and benefits of each option.</h3>
-        <table class="table px-5">
-            <thead>
-                <tr>
-                    <th>Type of Room</th>
-                    <th>Peak Season Rates</th>
-                    <th>Off-Peak Season Rates</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-
-            </tbody>
-        </table>
+    <center style="background-color: black; color: whitesmoke;">Copyright © 2022 SB Hostel. All rights reserved
     </center>
 </body>
 
 </html>
-<tr>
-
-</tr>

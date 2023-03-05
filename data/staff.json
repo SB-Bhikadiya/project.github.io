@@ -1,28 +1,27 @@
-{
-    "member": [
+
+    [
         {
-            "name": "Sagar Stark",
+            "name": "Stan Stark",
             "position": "General Manager",
             "description": "Sagar has over 10 years of experience in the hospitality industry and has been with our hostel since it opened. He oversees all operations and ensures that our guests have a comfortable and enjoyable stay.",
-            "image": "staff-member-1.jpg"
+            "image": "../pics/stan.jpg"
         },
         {
             "name": "Jane Smith",
             "position": "Front Desk Manager",
             "description": "Jane is the friendly face you'll see when you check in at our hostel. She's been with us for 5 years and knows all the best local spots to visit during your stay.",
-            "image": "staff-member-2.jpg"
+            "image": "../pics/jane.jpg"
         },
         {
             "name": "Mark Johnson",
             "position": "Housekeeping Manager",
             "description": "Mark ensures that our rooms are always clean and comfortable for our guests. He has been with us for 3 years and takes pride in providing excellent service to all our guests.",
-            "image": "staff-member-3.jpg"
+            "image": "../pics/mark.jpeg"
         },
         {
             "name": "Sarah Lee",
             "position": "Kitchen Manager",
             "description": "Sarah is in charge of our hostel's kitchen, and she takes pride in creating delicious and healthy meals for our guests. She has been a chef for over 15 years and has worked in some of the best restaurants in the city.",
-            "image": "staff-member-4.jpg"
+            "image": "../pics/sarah.jpg"
         }
     ]
-}

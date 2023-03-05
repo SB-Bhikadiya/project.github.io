@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery/jquery.js"></script>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.css">
+
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #AAC4FF;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e0d9d9;
+        }
+
+        body {
+            background-color: #EEF1FF;
+        }
+    </style>
+    <script>
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "../data/fee.xml", true);
+        xmlhttp.send();
+
+        xmlhttp.onload = function () {
+            let data = xmlhttp.responseXML;
+            for (let i = 0; i < data.getElementsByTagName("roomtype").length; i++) {
+                $(".table-group-divider").append(
+                    `
+                    <tr>
+                        <td>${data.getElementsByTagName("type")[i].childNodes[0].nodeValue}</td>
+                        <td>${data.getElementsByTagName("peakSeasonRate")[i].childNodes[0].nodeValue}</td>
+                        <td>${data.getElementsByTagName("offPeakSeasonRate")[i].childNodes[0].nodeValue}</td>
+                    </tr>
+                    `
+                )
+            }
+        }        
+    </script>
+    <script>
+        let xmlhttpp = new XMLHttpRequest();
+        xmlhttpp.open("GET", "../data/staff.json", true);
+        xmlhttpp.send();
+
+        xmlhttpp.onload = function () {
+            var staff = xmlhttpp.responseText;
+            var staffdata = JSON.parse(staff);
+
+                
+            staffdata.forEach(item => {
+                $(".stf").append(
+                    `
+                        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="card-text">General Manager</p>
+                <p class="card-text">John has over 10 years of experience in the hospitality industry and has been with our hostel since it opened. He oversees all operations and ensures that our guests have a comfortable and enjoyable stay.</p>
+            </div>
+          </div> 
+                        `
+                )
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <center>
+        <h1 style="font-size: 29px;"> Meet our team </h1>
+    </center>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col stf">
+
+        </div>
+        <div class="col stf">
+
+        </div>
+        <div class="col stf">
+
+        </div>
+        <div class="col stf">
+
+        </div>
+    </div>
+    <!-- ============================================================================================================================ -->
+    <h1 style="font-size: 29px;"> Our rates </h1>
+    <center>
+        <h3 style="width:80%; font-size: 18px;">Welcome to the fee page on our hostel website! This is where you can
+            find all the
+            information you need about the costs associated with staying at our hostel. We've designed a clear and
+            easy-to-read table that outlines the fees for each type of room available at the hostel, so you can easily
+            compare the costs and benefits of each option.</h3>
+        <table class="table px-5">
+            <thead>
+                <tr>
+                    <th>Type of Room</th>
+                    <th>Peak Season Rates</th>
+                    <th>Off-Peak Season Rates</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+
+            </tbody>
+        </table>
+    </center>
+</body>
+
+</html>
+<tr>
+
+</tr>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hostel>
+
+  <roomtype>
+    <type>Private Room</type>
+    <peakSeasonRate>$100 per night</peakSeasonRate>
+    <offPeakSeasonRate>$80 per night</offPeakSeasonRate>
+  </roomtype>
+
+   <roomtype>
+    <type>Dormitory Room</type>
+    <peakSeasonRate>$30 per bed</peakSeasonRate>
+    <offPeakSeasonRate>$25 bed per bed</offPeakSeasonRate>
+  </roomtype>
+  
+   <roomtype>
+    <type>Family Room</type>
+    <peakSeasonRate>$150 per night</peakSeasonRate>
+    <offPeakSeasonRate>$120 per night</offPeakSeasonRate>
+  </roomtype> 
+  
+  <roomtype>
+    <type>Laundry</type>
+    <peakSeasonRate>$5 per load</peakSeasonRate>
+    <offPeakSeasonRate>$5 per load</offPeakSeasonRate>
+  </roomtype> 
+  
+  <roomtype>
+    <type>Breakfast</type>
+    <peakSeasonRate>$8 per person</peakSeasonRate>
+    <offPeakSeasonRate>$8 per person</offPeakSeasonRate>
+  </roomtype>
+
+</hostel>

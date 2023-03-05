@@ -8,6 +8,7 @@
     <title>Contect</title>
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../jquery/jquery.js"></script>
     <style>
         body {
             background: #007bff;
@@ -25,10 +26,67 @@
             box-shadow: none !important;
             border: 1px solid black !important;
         }
+
+        .error {
+            color: red;
+            display: none;
+        }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#myform").submit(function (event) {
+                event.preventDefault();
+                var count=1;
+
+                var name = $("#InputUsername").val().trim();
+                if (name == '') {
+                    $("#nameError").text('*please enter your name.').show();
+                    return false;
+                }
+                else {
+                    $("#nameError").hide();
+                    count++;
+                }
+
+                var email = $("#InputEmail").val().trim();
+                if (email == '') {
+                    $("#emailError").text('*please enter email right').show();
+                    return false;
+                } else if (!isValidEmail(email)) {
+                    $("#emailError").text('*please enter email right').show();
+                    return false;
+                }
+                else {
+                    $("#emailError").hide();
+                    count++;
+                }
+
+                var name = $("#message").val().trim();
+                if (name == '') {
+                    $("#messageError").text('*please write something').show();
+                    return false;
+                }
+                else {
+                    $("#messageError").hide();
+                    count++;
+                }           
+                
+                this.submit();
+            });
+            function isValidEmail(email) {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+
+    </script>
+
 </head>
 
 <body>
+
+
     <div class="container-fluid px-5 my-5">
         <div class="row justify-content-center">
             <div class="col-xl-10">
@@ -40,25 +98,29 @@
                                 <div class="text-center">
                                     <div class="h3 fw-light">Contact Us</div>
                                 </div>
-                                <form id="contactForm">
+                                <form id="myform">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Name" />
+                                        <input class="form-control" id="InputUsername" type="text" placeholder="Name" />
                                         <label for="name">Name</label>
+                                        <span id="nameError" class="error"></span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="emailAddress" type="email"
+                                        <input class="form-control" id="InputEmail" type="email"
                                             placeholder="Email Address" />
-                                        <label for="emailAddress">Email Address</label>
+                                        <label for="InputEmail">Email Address</label>
+                                        <span id="emailError" class="error"></span>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" id="message" type="text" placeholder="Message"
                                             style="height: 10rem;"></textarea>
                                         <label for="message">Message</label>
-                                    </div>                                    
-                                    <div class="d-grid">
-                                        <button class="btn btn-primary btn-lg " id="submitButton"
-                                            type="submit">Submit</button>
+                                        <span id="messageError" class="error"></span>
                                     </div>
+                                    <div class="d-grid" id="s1">
+                                        <button class="btn btn-primary btn-lg " data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" id="submitButton"
+                                            type="submit">Submit</button>
+                                    </div>                                    
                                 </form>
                             </div>
                         </div>
@@ -66,7 +128,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>   
+
 </body>
 
 </html>

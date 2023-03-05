@@ -8,7 +8,14 @@
   <title>Hostel</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
+
+  <!-- favicon Connectiviy -->
+  <link rel="shortcut icon" href="./pics/favicon.png" type="image/x-icon">
+
+  <!-- Font Awesome Icon Connectivity -->
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
 </head>
 
 <body>
@@ -22,21 +29,20 @@
   <header class="pb-5">
     <div class="nav">
       <input type="checkbox" id="nav-check">
-      <div class="nav-header ps-5">
-        <div class="nav-title">
+      <div class="nav-header">
+        <div class="nav-title ps-5">
           <img src="pics/logo1.png" alt="logo" class="logo">
         </div>
       </div>
-
       <div class="nav-links">
-        <a href="" target="_blank">Home</a>
-        <a href="" target="_blank">Inquiry</a>
-        <a href="./html/contect_us.html" target="_blank">Contect</a>
-        <a href="./html/signup.html" target="_blank">Signin/up</a>
+        <i class="fa-solid fa-house-chimney"></i><a href="" target="_blank">Home</a>
+        <i class="fa-solid fa-layer-group"></i><a href="" target="_blank">Inquiry</a>
+        <i class="fa-solid fa-comment"></i><a href="./html/contect_us.html" target="_blank">Contect</a>
+        <i class="fa-solid fa-user"></i><a href="./html/signup.html" target="_blank">Signin/up</a>
       </div>
 
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight"><box-icon name='menu'></box-icon></button>
+        aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i></button>
 
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
@@ -49,7 +55,7 @@
           </div>
           <div class="text-center mt-3">
             <li><a class="text-decoration-none" href="" target="_blank">Inquiry</a></li>
-          </div>        
+          </div>
           <div class="text-center mt-3">
             <li><a class="text-decoration-none" href="./html/contect_us.html" target="_blank">Contect</a></li>
           </div>
@@ -158,10 +164,14 @@
       <div class="card-body">
         <h5 class="card-title text-center">Quick Links</h5>
         <p class="card-text">
-          <li class="text-center list-unstyled m-2"><a href="#" class="text-decoration-none text-uppercase" style="color: black;">home</a></li>
-          <li class="text-center list-unstyled m-2"><a href="" class="text-decoration-none text-uppercase" style="color: black;">Inquiry</a></li>
-          <li class="text-center list-unstyled m-2"><a href="./html/contect_us.html" class="text-decoration-none text-uppercase" style="color: black;">contect us</a></li>
-          <li class="text-center list-unstyled m-2"><a href="./html/signup.html" class="text-decoration-none text-uppercase" style="color: black;">signin/up</a></li>
+          <li class="text-center list-unstyled m-2"><a href="#" class="text-decoration-none text-uppercase"
+              style="color: black;">home</a></li>
+          <li class="text-center list-unstyled m-2"><a href="" class="text-decoration-none text-uppercase"
+              style="color: black;">Inquiry</a></li>
+          <li class="text-center list-unstyled m-2"><a href="./html/contect_us.html"
+              class="text-decoration-none text-uppercase" style="color: black;">contect us</a></li>
+          <li class="text-center list-unstyled m-2"><a href="./html/signup.html"
+              class="text-decoration-none text-uppercase" style="color: black;">signin/up</a></li>
         </p>
       </div>
     </div>
@@ -176,10 +186,18 @@
       <div class="card-body">
         <h5 class="card-title text-center">Follow Us</h5>
         <p class="card-text">
-          <li class="text-center list-unstyled m-2"><a href="https://www.facebook.com/sagarr.bhikadiya?mibextid=ZbWKwL" class="text-decoration-none text-uppercase" target="_blank" style="color: black;">facebook</a></li>
-          <li class="text-center list-unstyled m-2"><a href="https://instagram.com/sb_bhikadiya_?igshid=ZDdkNTZiNTM=" class="text-decoration-none text-uppercase" target="_blank" style="color: black;">instagram</a></li>
-          <li class="text-center list-unstyled m-2"><a href="https://github.com/SB-Bhikadiya" class="text-decoration-none text-uppercase" target="_blank" style="color: black;">Github</a></li>
-          <li class="text-center list-unstyled m-2"><a href="https://wa.me/+918866601854" class="text-decoration-none text-uppercase" target="_blank" style="color: black;">whatsapp</a></li>
+          <li class="text-center list-unstyled m-2"><a href="https://www.facebook.com/sagarr.bhikadiya?mibextid=ZbWKwL"
+              class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                class="fa-brands fa-facebook-f"></i></a></li>
+          <li class="text-center list-unstyled m-2"><a href="https://instagram.com/sb_bhikadiya_?igshid=ZDdkNTZiNTM="
+              class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                class="fa-brands fa-instagram"></i></a></li>
+          <li class="text-center list-unstyled m-2"><a href="https://github.com/SB-Bhikadiya"
+              class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                class="fa-brands fa-github"></i></a></li>
+          <li class="text-center list-unstyled m-2"><a href="https://wa.me/+918866601854"
+              class="text-decoration-none text-uppercase" target="_blank" style="color: black;"><i
+                class="fa-brands fa-whatsapp"></i></a></li>
         </p>
       </div>
     </div>

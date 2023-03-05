@@ -73,7 +73,7 @@ body {
   display: none !important;
 }
 
-.small_disp{
+.small_disp {
   display: none;
 }
 
@@ -85,6 +85,18 @@ body {
     display: block !important;
   }
 
+  .nav {
+    height: 35px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .btn{
+    top: -1px;
+  }
+
   .btn:focus {
     box-shadow: none !important;
   }
@@ -92,10 +104,12 @@ body {
   .nav-links {
     display: none !important;
   }
-  .first_content_rgt{
+
+  .first_content_rgt {
     display: none;
   }
-  .small_disp{
+
+  .small_disp {
     display: block;
   }
 

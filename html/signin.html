@@ -61,10 +61,10 @@
                     return false;
                 } else if (!isValidEmail(email)) {
                     $("#emailError").text('*please enter email right').show();
+                    return false;
                 }
                 else {
                     $("#emailError").hide();
-                    return true;
                 }
 
                 var password = $("#Password").val().trim();
@@ -73,10 +73,10 @@
                     return false;
                 } else if (password.length < 8) {
                     $("#passwordError").text('*password length is minumum 8 words').show();
+                    return false;
                 }
                 else {
                     $("#passwordError").hide();
-                    return true;
                 }
                 this.submit();
             });
@@ -85,6 +85,7 @@
                 return emailRegex.test(email);
             }
         });
+
     </script>
     <div class="container">
         <div class="row">
@@ -112,9 +113,8 @@
                                 </label>
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit"
-                                    id="signin">Sign
-                                    in</button>
+                                <input type="submit" class="btn btn-primary btn-login text-uppercase fw-bold"
+                                    id="signin" value="Sign in">
                             </div>
                             <hr class="my-4">
                             <div class="d-grid mb-2">
